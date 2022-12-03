@@ -1,7 +1,7 @@
 let cantidadNoticias = 5;
 let pageFinal = cantidadNoticias;
 let pageInicial = 0;
-let temaActual = "Tecnología";
+let temaActual = "Programacion";
 
 let noticias = {
     "apiKey":"ec8f84ab5fa94d81bb7b5ed69e672a5e",
@@ -58,6 +58,7 @@ let noticias = {
             document.querySelector(".container-noticias").appendChild(item);
         }
 
+        //Agregamos el boton cargar mas
         let btnSiguiente = document.createElement("span");
         btnSiguiente.id = "btnSiguiente";
         btnSiguiente.textContent = "Ver más";
@@ -65,6 +66,14 @@ let noticias = {
         document.querySelector(".container-noticias").appendChild(btnSiguiente);
     }
 }
+
+function buscar(cat){
+    pageInicial = 0;
+    pageFinal = cantidadNoticias;
+    temaActual = cat;
+    noticias.fetchNoticias(cat);
+}
+
 
 
 noticias.fetchNoticias(temaActual);
