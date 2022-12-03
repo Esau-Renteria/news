@@ -73,6 +73,7 @@ function buscar(cat){
     temaActual = cat;
     noticias.fetchNoticias(cat);
 }
+
 function buscarTema(){
     pageInicial =0;
     pageFinal = cantidadNoticias;
@@ -82,6 +83,13 @@ function buscarTema(){
     noticias.fetchNoticias(temaActual);
     }
 
+function siguiente(){
+    pageInicial = pageFinal +1;
+    pageFinal = pageFinal + cantidadNoticias +1;
+    //elimino el boto siguiente
+    document.querySelector("#btnSiguiente").remove();
+    noticias.fetchNoticias(temaActual)
+}
 
 
 noticias.fetchNoticias(temaActual);
