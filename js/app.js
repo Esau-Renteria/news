@@ -1,7 +1,7 @@
 let cantidadNoticias = 5;
 let pageFinal = cantidadNoticias;
 let pageInicial = 0;
-let temaActual = "Programacion";
+let temaActual = "programación";
 
 let noticias = {
     "apiKey":"ec8f84ab5fa94d81bb7b5ed69e672a5e",
@@ -54,7 +54,7 @@ let noticias = {
             item.appendChild(h2);
             item.appendChild(img);
             item.appendChild(info_item);
-            item.setAttribute("onclick", "location.href='"+url+"'");
+            item.setAttribute("onclick","location.href='"+url+"'");
             document.querySelector(".container-noticias").appendChild(item);
         }
 
